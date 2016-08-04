@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require_tree .
 //= require Chart
+
+function getData(){
+  console.log('clicked')
+}
+
+$(()=>{
+  $('#submit').click(getData)
+})
