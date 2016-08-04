@@ -12,11 +12,11 @@
     <div class='row'>
     <h3>High User</h3>
     <!-- For building charts, modified the boilerplate given in the chart.js docs -->
-      <canvas id="myChart-1" width="400" height="400"></canvas>
+      <canvas id="myChart-1"></canvas>
       <script>
         let ctx1 = document.getElementById("myChart-1");
         let myChart1 = new Chart(ctx1, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
                 datasets: [{
@@ -57,11 +57,11 @@
     <div class='row'>
         <h3>Moderate User</h3>
     <!-- For building charts, modified the boilerplate given in the chart.js docs -->
-      <canvas id="myChart-2" width="400" height="400"></canvas>
+      <canvas id="myChart-2"></canvas>
       <script>
         let ctx2 = document.getElementById("myChart-2");
         let myChart2 = new Chart(ctx2, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
                 datasets: [{
@@ -102,11 +102,11 @@
     <div class='row'>
         <h3>Low User</h3>
     <!-- For building charts, modified the boilerplate given in the chart.js docs -->
-      <canvas id="myChart-3" width="400" height="400"></canvas>
+      <canvas id="myChart-3"></canvas>
       <script>
         var ctx3 = document.getElementById("myChart-3");
         var myChart3 = new Chart(ctx3, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
                 datasets: [{
