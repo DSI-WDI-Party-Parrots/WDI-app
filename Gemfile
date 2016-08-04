@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'chart-js-rails'
 
+# use chart.js for charting data
+gem 'chart-js-rails'
+# use skeleton style
+gem 'skeleton-rails', :git => 'https://github.com/helios-technologies/skeleton-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use postgresql as the database for Active Record
@@ -16,6 +19,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+# Use HTTP Party
+gem 'httparty'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
