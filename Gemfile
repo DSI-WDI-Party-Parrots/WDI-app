@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
+# use chart.js for charting data
 gem 'chart-js-rails'
-
+# use skeleton style
+gem 'skeleton-rails', :git => 'https://github.com/helios-technologies/skeleton-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use postgresql as the database for Active Record
