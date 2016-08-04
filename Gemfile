@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 # use chart.js for charting data
 gem 'chart-js-rails'
 # use skeleton style
