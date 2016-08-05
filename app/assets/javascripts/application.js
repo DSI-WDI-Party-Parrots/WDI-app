@@ -14,40 +14,83 @@
 //= require jquery_ujs
 //= require_tree .
 //= require Chart
-$(window).load(function(){
-  var ctx3 = document.getElementById("myChart-3");
-  var myChart3 = new Chart(ctx3, {
-      type: 'line',
-      data: {
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-          datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)'
-              ],
-              borderColor: [
-                  'rgba(255,99,132,1)'
-              ],
-              borderWidth: 1
-          }]
-      },
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
+$(document).ready(function(){
+
+
+
+    function updateChart(){
+        let sessions = $('#sessions').val()
+        let length = $('#length').val()
+
+        $.ajax({
+          url: 'http://localhost:4000/predict',
+          type: 'get',
+          crossDomain: true,
+          dataType: 'jsonp',
+          data: {SessionLength: sessions, NumSessions: length},
+          success: function(data){
+            console.log('data')
+            console.log(data)
           }
-      }
-  });
-});
+        })
+        // .done(function(response) {
+        //   console.log(response)
+        //   console.log("success");
+        // })
+        // .fail(function() {
+        //   console.log("error");
+        // })
+        // .always(function() {
+        //   console.log("complete");
+        // });
 
-function getData(){
-  console.log('clicked')
-}
+       ctx1 = document.getElementById("myChart-1");
+       myChart1 = new Chart(ctx1, {
+          type: 'bar',
+          data: {
+              labels: ["Sessions", "Length"],
+              datasets: [{
+                  label: '# of Sessions',
+                  data: [sessions],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255,99,132,1)',
+                      'rgba(54, 162, 235, 1)'
+                  ],
+                  borderWidth: 1
+              },
+              {
+                  label: '# of Length of time',
+                  data: [length],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255,99,132,1)',
+                      'rgba(54, 162, 235, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero:true
+                      }
+                  }]
+              }
+          }
+      });
+    }
 
-$(()=>{
-  $('#submit').click(getData)
+    $(()=>{
+      $('#submit').click(updateChart)
+    })
+
 })
+
