@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require_tree .
 //= require Chart
-
 $(document).ready(function(){
 
 
